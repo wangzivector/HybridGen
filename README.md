@@ -1,4 +1,4 @@
-# HybridGen: Learning-Optimization Hybrid Framework for Generalized Grasp Pose Generation
-Transferring Grasping Across Multiple Grippers.
+# HybridGen: Learning-Optimization Hybrid Framework for Generalized Grasp Generation
+Transferring Grasping Across Grippers.
 
-#### Thing to be added...
+#### To be added soon ...
