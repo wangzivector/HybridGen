@@ -11,9 +11,7 @@
 HybridGen is a learning-optimization framework for robotic grasping, which adopts antipodal grasp data and generates 2D grasp poses for various grippers (ten tested grippers already available). With the downloaded models, practitioners can deploy this framework to their own grippers with specific kinematics.
 
 **Videos** : 
-[Youtube](https://www.youtube.com/watch?v=NhV8_Q_E_B4)
-
-[![HybridGen:Transferring Grasping Across Grippers](https://img.youtube.com/vi/NhV8_Q_E_B4/mqdefault.jpg)](https://www.youtube.com/watch?v=NhV8_Q_E_B4)
+[[Youtube](https://www.youtube.com/watch?v=NhV8_Q_E_B4)].
 
 
 ## 1. Prepare environment
