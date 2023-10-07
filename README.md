@@ -4,14 +4,16 @@
 ## Transferring Grasping Across Grippers
 
 <p align="center">
-  <img src="misc/workflow_tiptrain_pure@3x.png" width="80%" title="workflow">
+  <img src="workflow.png" width="80%" title="workflow">
 </p>
 
 
 HybridGen is a learning-optimization framework for robotic grasping, which adopts antipodal grasp data and generates 2D grasp poses for various grippers (ten tested grippers already available). With the downloaded models, practitioners can deploy this framework to their own grippers with specific kinematics.
 
-**Videos** : [Youtube]()
+**Videos** : 
+[Youtube](https://www.youtube.com/watch?v=NhV8_Q_E_B4)
 
+[![HybridGen:Transferring Grasping Across Grippers](https://img.youtube.com/vi/NhV8_Q_E_B4/mqdefault.jpg)](https://www.youtube.com/watch?v=NhV8_Q_E_B4)
 
 
 ## 1. Prepare environment
@@ -28,8 +30,6 @@ pip install -r requirements.txt
 conda config --add channels conda-forge
 conda install casadi
 ```
-
-> Alternatively, CasADi can be installed in Binary installation (Py36-Linux) and used with: `from sys import path` and `path.append(r"<yourpath>/casadi")`. Detailed guidance refers to: [Installing CasADi](https://github.com/casadi/casadi/wiki/InstallationInstructions#option-3-casadi-on-conda). 
 
 
 ## 2. Download Cornell dataset *or* pre-trained models
@@ -51,7 +51,7 @@ The full path of dataset would be like `tipdircnn/dataset/cornell/01`.
 
 Download the pretrained network models and move to `tipdircnn/weights/`.
 
-## 3. Train network:
+## 3. Train network
 After prepare the dataset, train tipdircnn with the following command:
 ```bash
 # For Example
