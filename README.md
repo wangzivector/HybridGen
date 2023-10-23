@@ -10,6 +10,11 @@
 
 HybridGen is a learning-optimization framework for robotic grasping, which adopts antipodal grasp data and generates 2D grasp poses for various grippers (ten tested grippers already available). With the downloaded models, practitioners can deploy this framework to their own grippers with specific kinematics.
 
+
+<p align="center">
+  <img src="ten_grippers_visual.png" width="80%" title="experiments of ten grippers">
+</p>
+
 **Videos** : 
 [[Youtube](https://www.youtube.com/watch?v=NhV8_Q_E_B4)].
 
@@ -58,7 +63,7 @@ python tipdircnn/train_network.py --dataset cornell --dataset-path tipdircnn/dat
 --batch-size 16 --tra-batches 500 --epoches 100 \
 --val-augment --val-batches 128 --tta-size 4
 ```
-After training, the network weights and log files are stored in `output/`. this weights can be used in the evaluation. 
+After training, the network weights and log files are stored in `output/`. the weights can be used in the evaluation. 
 
 ## 4. Evaluation of tipdirCNN
 To show the inference of fingertips, using the dataset images:
@@ -81,7 +86,7 @@ python tipdircnn/eval_network_tta.py --network tipdircnn/weights/efffpn_std/efff
 ## 5. Optimization with inferred probability maps
 In order to easily intergrate our system with other programming languages, we setup a socket-based server for the inference-optimization process in `optimization/grasp_generation_server.py`, which can receive RGBD/Depth images via IP/Port settings, and return the estimated grasp pose for grippers.
 
-To using the inference-optimization hybrid nodes, first start server, which listens to the desired IP:Port indicated in `optimization/modules/param_set.py` (this script stores all settings of the grasp generation, check before use). Then, another client nodes (`optimization/testset_eval_grippertype_client.py` for ten grippers) can connect to the server and send images to the server node. After inferring and generating the grasp pose, the server nodes return the grasp pose (position, orientation, and other properties) to the client node.
+To using the inference-optimization hybrid nodes, first start server, which listens to the desired IP:Port indicated in `optimization/modules/param_set.py` (this script stores all settings of the grasp generation, check before use). Then, another client nodes (`optimization/testset_eval_grippertype_client.py` for ten grippers) can connect to the server and send images to the server node. After inferring and generating the grasp pose, the server node returns the grasp pose (position, orientation, and other properties) to the client node. Following gives the detailed steps:
 
 - Step 1: Check the grasp geneartion settiings in `optimization/modules/param_set.py`, including the *IP:Port*, *grippertype*, *network weights*, *TTA Size* and *Input type*, etc.
 
@@ -91,17 +96,20 @@ To using the inference-optimization hybrid nodes, first start server, which list
 # Conda env: conda activate hybridgenEnv
 python optimization/grasp_generation_server.py 
 ```
-The server will be in the state of waiting socket connect.
+The server will be in the state of waiting socket connecting.
 
-- Step 3: Start image client node, which retrive the cornell dataset and publish the image data via socket to the server node:
+- Step 3: Start image client node, which retrives the cornell dataset and publishes the image data via socket to the server node:
 ```bash
 # Start image client
 # Conda env: conda activate hybridgenEnv
 python optimization/testset_eval_grippertype_client.py
 ```
-- Step 4: Server node will conduct inference and optimization process (within one mintue), and return the optimization results to the image client. The results are stored at path stated by`result_dir` at `param_set.py`, which is initially set as `tipdircnn/output`. 
+- Step 4: Server node will conduct inference and optimization (within one mintue), and return the optimization results to the image client. The results are stored at path stated by`result_dir` at `param_set.py`, which is initially set as `tipdircnn/output/`. 
 
 - Note: If you want to implement the system with your specific RGBD cameras, kindly refer to `optimization/testset_eval_grippertype_client.py` and code your own socket nodes. `optimization/sensor_client_demo` gives demo of how to use Microsoft Azure RGBD camera (in ROS) to send a image via socket to grasp pose generation server. 
+
+## Performance
+To be added.
 
 ## Acknowledgement 
 Great thanks to [GGCNN](https://github.com/dougsm/ggcnn), as the code of inference module `tipdircnn` is built upon this project. We implement the fingertip dataset based on its standard Cornell dataset processing.
