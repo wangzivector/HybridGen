@@ -108,9 +108,6 @@ python optimization/testset_eval_grippertype_client.py
 
 - Note: If you want to implement the system with your specific RGBD cameras, kindly refer to `optimization/testset_eval_grippertype_client.py` and code your own socket nodes. `optimization/sensor_client_demo` gives a demo of how to use Microsoft Azure RGBD camera (in ROS) to send an image via socket to grasp pose generation server. 
 
-## Performance
-To be added.
-
 ## Acknowledgement 
 Great thanks to [GGCNN](https://github.com/dougsm/ggcnn), as the code of inference module `tipdircnn` is built upon this project. We implement the fingertip dataset based on its standard Cornell dataset processing.
 
