@@ -1,8 +1,6 @@
 
 # HybridGen: Transferring Grasping Across Grippers: Learning–Optimization Hybrid Framework for Generalized Planar Grasp Generation
 
-## Transferring Grasping Across Grippers
-
 <p align="center">
   <img src="workflow.png" width="80%" title="workflow">
 </p>
