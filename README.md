@@ -1,5 +1,5 @@
 
-# HybridGen: Learning-Optimization Hybrid Framework for Generalized Planar Grasp Generation
+# [TRO] HybridGen: Transferring Grasping Across Grippers: Learning–Optimization Hybrid Framework for Generalized Planar Grasp Generation
 
 ## Transferring Grasping Across Grippers
 
@@ -112,6 +112,14 @@ python optimization/testset_eval_grippertype_client.py
 Great thanks to [GGCNN](https://github.com/dougsm/ggcnn), as the code of inference module `tipdircnn` is built upon this project. We implement the fingertip dataset based on its standard Cornell dataset processing.
 
 ## Cite
-If this project is useful in your research, please cite:
-> X. Wang and Q. Xu, "Transferring Grasping Across Grippers: Learning-Optimization Hybrid Framework for Generalized Planar Grasp Generation," in IEEE Transactions on Robotics, 2024, doi: 10.1109/TRO.2024.3422054.
-
+```
+@article{wang2024transferring,
+  title={Transferring grasping across grippers: Learning--optimization hybrid framework for generalized planar grasp generation},
+  author={Wang, Xianli and Xu, Qingsong},
+  journal={IEEE Transactions on Robotics},
+  volume={40},
+  pages={3388--3405},
+  year={2024},
+  publisher={IEEE}
+}
+```
