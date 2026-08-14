@@ -1,5 +1,5 @@
 
-# [TRO] HybridGen: Transferring Grasping Across Grippers: Learning–Optimization Hybrid Framework for Generalized Planar Grasp Generation
+# HybridGen: Transferring Grasping Across Grippers: Learning–Optimization Hybrid Framework for Generalized Planar Grasp Generation
 
 ## Transferring Grasping Across Grippers
 
